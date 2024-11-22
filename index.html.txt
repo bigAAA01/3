@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beauty Studio</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+        }
+        header {
+            background-color: #4CAF50;
+            color: white;
+            text-align: center;
+            padding: 1rem;
+        }
+        header h1 {
+            margin: 0;
+        }
+        .services {
+            padding: 2rem;
+            max-width: 800px;
+            margin: auto;
+            background-color: white;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .services h2 {
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+        .services ul {
+            list-style: none;
+            padding: 0;
+        }
+        .services li {
+            padding: 10px 0;
+            display: flex;
+            justify-content: space-between;
+            border-bottom: 1px solid #ddd;
+        }
+        .contact-form {
+            padding: 2rem;
+            max-width: 800px;
+            margin: auto;
+            background-color: white;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .contact-form h2 {
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+        .contact-form label {
+            display: block;
+            margin: 0.5rem 0 0.2rem;
+        }
+        .contact-form input, 
+        .contact-form select, 
+        .contact-form textarea {
+            width: 100%;
+            padding: 0.5rem;
+            margin-bottom: 1rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        .contact-form button {
+            width: 100%;
+            padding: 0.7rem;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            cursor: pointer;
+        }
+        .contact-form button:hover {
+            background-color: #45a049;
+        }
+        .call-button {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            padding: 15px;
+            font-size: 1.2rem;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+        }
+        footer {
+            background-color: #4CAF50;
+            color: white;
+            text-align: center;
+            padding: 1rem;
+            margin-top: 20px;
+        }
+        footer a {
+            color: white;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Beauty Studio</h1>
+    <p>Welcome to our beauty paradise</p>
+</header>
+
+<section class="services">
+    <h2>Our Services</h2>
+    <ul>
+        <li><span>Manicure</span><span>$30</span></li>
+        <li><span>Pedicure</span><span>$40</span></li>
+        <li><span>Haircut</span><span>$50</span></li>
+        <li><span>Facial</span><span>$60</span></li>
+    </ul>
+</section>
+
+<section class="contact-form">
+    <h2>Contact Us</h2>
+    <form>
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="phone">Phone Number:</label>
+        <input type="tel" id="phone" name="phone" required>
+
+        <label for="query-type">Type of Request:</label>
+        <select id="query-type" name="query-type" required>
+            <option value="appointment">Appointment</option>
+            <option value="question">Question</option>
+        </select>
+
+        <div id="appointment-details" style="display: none;">
+            <label for="service">Service:</label>
+            <input type="text" id="service" name="service">
+
+            <label for="date">Date:</label>
+            <input type="date" id="date" name="date">
+
+            <label for="time">Time:</label>
+            <input type="time" id="time" name="time">
+        </div>
+
+        <label for="message">Message:</label>
+        <textarea id="message" name="message" rows="4"></textarea>
+
+        <button type="submit">Submit</button>
+    </form>
+</section>
+
+<button class="call-button" onclick="callStudio()">📞</button>
+
+<footer>
+    <p>Contact us: <a href="tel:+1234567890">+1 (234) 567-890</a></p>
+    <p>
+        Follow us: 
+        <a href="https://instagram.com" target="_blank">Instagram</a>
+        <a href="https://facebook.com" target="_blank">Facebook</a>
+        <a href="https://twitter.com" target="_blank">Twitter</a>
+    </p>
+</footer>
+
+<script>
+    // Toggle appointment details
+    document.getElementById('query-type').addEventListener('change', function () {
+        const appointmentDetails = document.getElementById('appointment-details');
+        if (this.value === 'appointment') {
+            appointmentDetails.style.display = 'block';
+        } else {
+            appointmentDetails.style.display = 'none';
+        }
+    });
+
+    // Call studio function
+    function callStudio() {
+        window.location.href = 'tel:+1234567890';
+    }
+</script>
+
+</body>
+</html>
